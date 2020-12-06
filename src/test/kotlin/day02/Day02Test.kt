@@ -15,11 +15,12 @@ class Day02Test : AutoCloseKoinTest() {
     private val day02: Day02 by inject()
     private val lineParser: LineParser by inject()
 
-    private val example = """
+    private val example =
+        """
         1-3 a: abcde
         1-3 b: cdefg
         2-9 c: ccccccccc
-    """.trimIndent()
+        """.trimIndent()
 
     @Test
     fun `example problem 1`() {

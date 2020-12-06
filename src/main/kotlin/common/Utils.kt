@@ -8,7 +8,7 @@ object Utils {
             fileSequence.map { line ->
                 transformer(line)
             }
-            .toList()
+                .toList()
         }
     }
 

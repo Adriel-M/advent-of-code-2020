@@ -24,4 +24,3 @@ class PasswordTester(
         return password[indexToCheck] == characterPolicy.char
     }
 }
-

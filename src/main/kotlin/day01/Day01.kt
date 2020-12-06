@@ -1,9 +1,9 @@
 package day01
 
+import common.Solution
 import org.koin.core.KoinComponent
 import org.koin.core.inject
 import org.koin.dsl.module
-import common.Solution
 
 class Day01 : Solution<List<Int>, Int>(1), KoinComponent {
     private val twoSum: TwoSum by inject()

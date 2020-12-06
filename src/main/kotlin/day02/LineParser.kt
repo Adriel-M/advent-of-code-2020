@@ -2,7 +2,6 @@ package day02
 
 import common.toPair
 
-
 class LineParser {
     fun parse(line: String): PasswordTester {
         val lineSplit = line.split(":")
@@ -16,7 +15,7 @@ class LineParser {
     }
 
     private fun parsePolicy(policySplit: String): CharacterPolicy {
-        val split  = policySplit.trim().split(" ")
+        val split = policySplit.trim().split(" ")
         return CharacterPolicy(
             char = split[1].first(),
             lowerUpper = split[0].toPair().toLowerUpper()

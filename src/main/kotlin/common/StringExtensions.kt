@@ -15,4 +15,3 @@ fun String.toPair(delimiter: String = "-"): Pair<Int, Int> {
     val upper = rangeSplit[1].toInt()
     return Pair(lower, upper)
 }
-
