@@ -1,11 +1,14 @@
+import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
+
 plugins {
     kotlin("jvm") version "1.4.10"
     kotlin("kapt") version "1.4.20"
+    id("org.jlleitschuh.gradle.ktlint") version "9.4.0"
 }
 
 group = "com.adriel-m"
 version = "1.0-SNAPSHOT"
-var koinVersion= "3.0.0-alpha-4"
+var koinVersion = "3.0.0-alpha-4"
 
 repositories {
     mavenCentral()
@@ -20,4 +23,18 @@ dependencies {
 
     testImplementation("org.koin:koin-test:$koinVersion")
     testImplementation("org.assertj:assertj-core:3.11.1")
+}
+
+ktlint {
+    verbose.set(true)
+    outputToConsole.set(true)
+    coloredOutput.set(true)
+    reporters {
+        reporter(ReporterType.CHECKSTYLE)
+        reporter(ReporterType.JSON)
+        reporter(ReporterType.HTML)
+    }
+    filter {
+        exclude("**/style-violations.kt")
+    }
 }
