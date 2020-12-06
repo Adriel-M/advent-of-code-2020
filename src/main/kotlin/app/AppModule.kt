@@ -9,3 +9,4 @@ object AppModule {
         Day02.module
     )
 }
+
