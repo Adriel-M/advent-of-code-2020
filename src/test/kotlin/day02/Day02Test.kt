@@ -1,17 +1,12 @@
 package day02
 
-import TestFixtures.testRule
 import common.Utils
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.Rule
 import org.junit.Test
-import org.koin.test.AutoCloseKoinTest
 import org.koin.test.inject
+import test_utils.BaseTest
 
-class Day02Test : AutoCloseKoinTest() {
-    @get:Rule
-    val rule = testRule
-
+class Day02Test : BaseTest() {
     private val day02: Day02 by inject()
     private val lineParser: LineParser by inject()
 

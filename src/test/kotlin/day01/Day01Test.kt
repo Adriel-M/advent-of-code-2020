@@ -1,18 +1,13 @@
 package day01
 
-import TestFixtures.testRule
 import common.Utils
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.BeforeClass
-import org.junit.Rule
 import org.junit.Test
-import org.koin.test.AutoCloseKoinTest
 import org.koin.test.inject
+import test_utils.BaseTest
 
-class Day01Test : AutoCloseKoinTest() {
-    @get:Rule
-    val rule = testRule
-
+class Day01Test : BaseTest() {
     private val day01: Day01 by inject()
 
     private val exampleInput = listOf(
