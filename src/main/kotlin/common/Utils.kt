@@ -3,7 +3,7 @@ package common
 import org.koin.dsl.module
 import java.io.File
 
-class Utils {
+object Utils {
     private fun <T> fileToList(file: File, transformer: (String) -> T): List<T> {
         return file.useLines { fileSequence ->
             fileSequence.map { line ->
@@ -16,11 +16,5 @@ class Utils {
     fun resourceToIntList(resourceName: String): List<Int> {
         val resourcePath = resourceName.toURI()
         return fileToList(File(resourcePath)) { it.toInt() }
-    }
-
-    companion object {
-        val module = module {
-            single { Utils() }
-        }
     }
 }

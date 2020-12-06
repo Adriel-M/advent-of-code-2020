@@ -49,6 +49,7 @@ gradle
 .gradle
 **/build/# Gradle and Maven with auto-import
 !src/**/build/# When using Gradle or Maven with auto-import, you should exclude module files,
+build
 # since they will be recreated, and may cause churn.  Uncomment if using
 # Ignore Gradle GUI config# auto-import.
 gradle-app.setting# .idea/artifacts

@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
     kotlin("jvm") version "1.4.10"
     kotlin("kapt") version "1.4.20"
@@ -17,5 +19,7 @@ dependencies {
     implementation(kotlin("stdlib"))
     implementation("org.koin:koin-core:$koinVersion")
     implementation("org.koin:koin-core-ext:$koinVersion")
+
     testImplementation("org.koin:koin-test:$koinVersion")
+    testImplementation("org.assertj:assertj-core:3.11.1")
 }
