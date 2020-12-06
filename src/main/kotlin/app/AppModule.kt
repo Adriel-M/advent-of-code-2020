@@ -5,7 +5,7 @@ import day02.Day02
 
 object AppModule {
     val modules = listOf(
-        Day01.module,
+         Day01.module,
         Day02.module
     )
 }
