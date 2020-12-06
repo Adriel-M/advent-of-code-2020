@@ -1,6 +1,5 @@
 package common
 
-import org.koin.dsl.module
 import java.io.File
 
 object Utils {
@@ -13,8 +12,12 @@ object Utils {
         }
     }
 
-    fun resourceToIntList(resourceName: String): List<Int> {
+    fun <T> fileToList(resourceName: String, transformer: (String) -> T): List<T> {
         val resourcePath = resourceName.toURI()
-        return fileToList(File(resourcePath)) { it.toInt() }
+        return fileToList(File(resourcePath), transformer)
+    }
+
+    fun resourceToIntList(resourceName: String): List<Int> {
+        return fileToList(resourceName) { it.toInt() }
     }
 }

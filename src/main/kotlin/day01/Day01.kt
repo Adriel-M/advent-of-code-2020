@@ -5,7 +5,7 @@ import org.koin.core.inject
 import org.koin.dsl.module
 import common.Solution
 
-class Day01 : Solution<Int, Int>(1), KoinComponent {
+class Day01 : Solution<List<Int>, Int>(1), KoinComponent {
     private val twoSum: TwoSum by inject()
     private val threeSum: ThreeSum by inject()
 
