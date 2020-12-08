@@ -18,7 +18,7 @@ class LineParser {
         val split = policySplit.trim().split(" ")
         return CharacterPolicy(
             char = split[1].first(),
-            lowerUpper = split[0].toPair().toLowerUpper()
+            lowerUpper = split[0].toPair { it.toInt() }.toLowerUpper()
         )
     }
 }
