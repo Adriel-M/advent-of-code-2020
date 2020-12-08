@@ -8,10 +8,10 @@ fun String.toURI(): URI {
         ?: throw FileNotFoundException("Can't find resource $this")
 }
 
-fun String.toPair(delimiter: String = "-"): Pair<Int, Int> {
+fun <T> String.toPair(delimiter: String = "-", transformer: (String) -> T): Pair<T, T> {
     val rangeSplit = this.split(delimiter)
     require(rangeSplit.size == 2)
-    val lower = rangeSplit[0].toInt()
-    val upper = rangeSplit[1].toInt()
-    return Pair(lower, upper)
+    val first = transformer(rangeSplit[0])
+    val second = transformer(rangeSplit[1])
+    return Pair(first, second)
 }
