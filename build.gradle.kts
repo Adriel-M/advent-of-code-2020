@@ -6,7 +6,7 @@ plugins {
     id("org.jlleitschuh.gradle.ktlint") version "9.4.0"
 }
 
-group = "com.adrielm"
+group = "com.adrielm.aoc2020"
 version = "1.0-SNAPSHOT"
 var koinVersion = "3.0.0-alpha-4"
 

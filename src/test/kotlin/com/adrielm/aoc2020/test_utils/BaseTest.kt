@@ -1,4 +1,4 @@
-package com.adrielm.test_utils
+package com.adrielm.aoc2020.test_utils
 
 import com.adrielm.app.AppModule
 import org.junit.Rule
