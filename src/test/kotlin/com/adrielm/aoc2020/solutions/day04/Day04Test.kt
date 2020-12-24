@@ -1,6 +1,6 @@
 package com.adrielm.aoc2020.solutions.day04
 
-import com.adrielm.aoc2020.common.Utils
+import com.adrielm.aoc2020.common.FileUtils
 import com.adrielm.aoc2020.test_utils.BaseTest
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
@@ -69,14 +69,14 @@ class Day04Test : BaseTest() {
 
     @Test
     fun `input problem 1`() {
-        val fileSequence = Utils.fileToList("day04.txt") { it }
+        val fileSequence = FileUtils.fileToList("day04.txt") { it }
         val passports = passportAccumulator.getPassports(fileSequence)
         assertThat(day04.solveProblem1(passports)).isEqualTo(208)
     }
 
     @Test
     fun `input problem 2`() {
-        val fileSequence = Utils.fileToList("day04.txt") { it }
+        val fileSequence = FileUtils.fileToList("day04.txt") { it }
         val passports = passportAccumulator.getPassports(fileSequence)
         assertThat(day04.solveProblem2(passports)).isEqualTo(167)
     }
