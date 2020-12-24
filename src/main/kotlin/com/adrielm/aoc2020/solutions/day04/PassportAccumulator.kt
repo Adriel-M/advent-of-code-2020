@@ -1,4 +1,4 @@
-package com.adrielm.solutions.day04
+package com.adrielm.aoc2020.solutions.day04
 
 class PassportAccumulator {
     fun getPassports(passportData: List<String>): List<Passport> {

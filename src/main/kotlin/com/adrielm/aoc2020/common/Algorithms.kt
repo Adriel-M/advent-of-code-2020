@@ -1,4 +1,4 @@
-package com.adrielm.common
+package com.adrielm.aoc2020.common
 
 object Algorithms {
     fun twoSum(input: List<Int>, target: Int, startingIndex: Int = 0): Pair<Int, Int>? {

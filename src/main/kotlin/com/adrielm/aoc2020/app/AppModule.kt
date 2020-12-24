@@ -1,10 +1,10 @@
-package com.adrielm.app
+package com.adrielm.aoc2020.app
 
-import com.adrielm.solutions.day01.Day01
-import com.adrielm.solutions.day02.Day02
-import com.adrielm.solutions.day03.Day03
-import com.adrielm.solutions.day04.Day04
-import com.adrielm.solutions.day05.Day05
+import com.adrielm.aoc2020.solutions.day01.Day01
+import com.adrielm.aoc2020.solutions.day02.Day02
+import com.adrielm.aoc2020.solutions.day03.Day03
+import com.adrielm.aoc2020.solutions.day04.Day04
+import com.adrielm.aoc2020.solutions.day05.Day05
 
 object AppModule {
     val modules = listOf(

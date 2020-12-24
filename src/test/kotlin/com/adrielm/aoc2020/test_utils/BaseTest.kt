@@ -1,6 +1,6 @@
 package com.adrielm.aoc2020.test_utils
 
-import com.adrielm.app.AppModule
+import com.adrielm.aoc2020.app.AppModule
 import org.junit.Rule
 import org.koin.test.AutoCloseKoinTest
 import org.koin.test.KoinTestRule

@@ -1,6 +1,6 @@
-package com.adrielm.solutions.day05
+package com.adrielm.aoc2020.solutions.day05
 
-import com.adrielm.common.Solution
+import com.adrielm.aoc2020.common.Solution
 import org.koin.dsl.module
 
 class Day05 : Solution<List<Seat>, Int>(5) {

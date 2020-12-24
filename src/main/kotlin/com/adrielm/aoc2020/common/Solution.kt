@@ -1,4 +1,4 @@
-package com.adrielm.common
+package com.adrielm.aoc2020.common
 
 abstract class Solution<I, O>(
     private val problemNumber: Int

@@ -1,4 +1,4 @@
-package com.adrielm.app
+package com.adrielm.aoc2020.app
 
 import org.koin.core.context.startKoin
 import org.koin.core.context.stopKoin

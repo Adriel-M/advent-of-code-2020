@@ -1,7 +1,7 @@
-package com.adrielm.solutions.day04
+package com.adrielm.aoc2020.solutions.day04
 
-import com.adrielm.common.safeEnumValueOf
-import com.adrielm.common.toPair
+import com.adrielm.aoc2020.common.safeEnumValueOf
+import com.adrielm.aoc2020.common.toPair
 
 class Passport(
     private val passportLines: List<String>

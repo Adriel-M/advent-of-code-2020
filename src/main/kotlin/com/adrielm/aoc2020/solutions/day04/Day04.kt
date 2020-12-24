@@ -1,6 +1,6 @@
-package com.adrielm.solutions.day04
+package com.adrielm.aoc2020.solutions.day04
 
-import com.adrielm.common.Solution
+import com.adrielm.aoc2020.common.Solution
 import org.koin.dsl.module
 
 class Day04 : Solution<List<Passport>, Int>(4) {

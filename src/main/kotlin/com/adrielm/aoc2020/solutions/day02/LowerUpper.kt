@@ -1,4 +1,4 @@
-package com.adrielm.solutions.day02
+package com.adrielm.aoc2020.solutions.day02
 
 class LowerUpper(
     val lower: Int,

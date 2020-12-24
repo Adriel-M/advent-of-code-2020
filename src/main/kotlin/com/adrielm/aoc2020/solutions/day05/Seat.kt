@@ -1,6 +1,6 @@
-package com.adrielm.solutions.day05
+package com.adrielm.aoc2020.solutions.day05
 
-import com.adrielm.common.Algorithms
+import com.adrielm.aoc2020.common.Algorithms
 
 class Seat(
     seatIdentifier: String

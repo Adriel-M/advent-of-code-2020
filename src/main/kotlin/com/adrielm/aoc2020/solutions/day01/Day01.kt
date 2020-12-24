@@ -1,7 +1,7 @@
-package com.adrielm.solutions.day01
+package com.adrielm.aoc2020.solutions.day01
 
-import com.adrielm.common.Algorithms
-import com.adrielm.common.Solution
+import com.adrielm.aoc2020.common.Algorithms
+import com.adrielm.aoc2020.common.Solution
 import org.koin.core.KoinComponent
 import org.koin.dsl.module
 

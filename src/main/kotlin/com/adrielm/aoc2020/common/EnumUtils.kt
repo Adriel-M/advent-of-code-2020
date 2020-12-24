@@ -1,4 +1,4 @@
-package com.adrielm.common
+package com.adrielm.aoc2020.common
 
 inline fun <reified T : Enum<T>> safeEnumValueOf(type: String): T? {
     return try {

@@ -1,4 +1,4 @@
-package com.adrielm.common
+package com.adrielm.aoc2020.common
 
 import java.io.FileNotFoundException
 import java.net.URI

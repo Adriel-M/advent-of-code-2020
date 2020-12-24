@@ -1,7 +1,7 @@
-package com.adrielm.solutions.day01
+package com.adrielm.aoc2020.solutions.day01
 
+import com.adrielm.aoc2020.common.Utils
 import com.adrielm.aoc2020.test_utils.BaseTest
-import com.adrielm.common.Utils
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.BeforeClass
 import org.junit.Test

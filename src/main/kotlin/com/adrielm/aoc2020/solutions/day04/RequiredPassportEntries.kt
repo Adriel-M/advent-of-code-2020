@@ -1,4 +1,4 @@
-package com.adrielm.solutions.day04
+package com.adrielm.aoc2020.solutions.day04
 
 private val hexMatcher = "^#[0-9a-f]{6}$".toRegex()
 

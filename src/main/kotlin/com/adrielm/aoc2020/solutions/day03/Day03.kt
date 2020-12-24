@@ -1,6 +1,6 @@
-package com.adrielm.solutions.day03
+package com.adrielm.aoc2020.solutions.day03
 
-import com.adrielm.common.Solution
+import com.adrielm.aoc2020.common.Solution
 import org.koin.dsl.module
 
 class Day03 : Solution<List<String>, Long>(3) {

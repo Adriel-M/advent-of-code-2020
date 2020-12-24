@@ -1,6 +1,6 @@
-package com.adrielm.solutions.day02
+package com.adrielm.aoc2020.solutions.day02
 
-import com.adrielm.common.Solution
+import com.adrielm.aoc2020.common.Solution
 import org.koin.dsl.module
 
 class Day02 : Solution<List<PasswordTester>, Int>(2) {

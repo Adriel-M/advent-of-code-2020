@@ -1,6 +1,6 @@
-package com.adrielm.solutions.day02
+package com.adrielm.aoc2020.solutions.day02
 
-import com.adrielm.common.toPair
+import com.adrielm.aoc2020.common.toPair
 
 class LineParser {
     fun parse(line: String): PasswordTester {
