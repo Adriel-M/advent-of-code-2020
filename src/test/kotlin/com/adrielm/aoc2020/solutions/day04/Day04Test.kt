@@ -69,14 +69,14 @@ class Day04Test : BaseTest() {
 
     @Test
     fun `input problem 1`() {
-        val fileSequence = FileUtils.fileToList("day04.txt") { it }
+        val fileSequence = FileUtils.fileToList("day04.txt")
         val passports = passportAccumulator.getPassports(fileSequence)
         assertThat(day04.solveProblem1(passports)).isEqualTo(208)
     }
 
     @Test
     fun `input problem 2`() {
-        val fileSequence = FileUtils.fileToList("day04.txt") { it }
+        val fileSequence = FileUtils.fileToList("day04.txt")
         val passports = passportAccumulator.getPassports(fileSequence)
         assertThat(day04.solveProblem2(passports)).isEqualTo(167)
     }

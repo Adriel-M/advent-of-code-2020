@@ -38,13 +38,13 @@ class Day03Test : BaseTest() {
 
     @Test
     fun `input problem 1`() {
-        val fileInput = FileUtils.fileToList("day03.txt") { it }
+        val fileInput = FileUtils.fileToList("day03.txt")
         assertThat(day03.solveProblem1(fileInput)).isEqualTo(252L)
     }
 
     @Test
     fun `input problem 2`() {
-        val fileInput = FileUtils.fileToList("day03.txt") { it }
+        val fileInput = FileUtils.fileToList("day03.txt")
         assertThat(day03.solveProblem2(fileInput)).isEqualTo(2608962048L)
     }
 }

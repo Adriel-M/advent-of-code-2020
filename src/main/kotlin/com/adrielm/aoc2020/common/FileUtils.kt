@@ -17,6 +17,10 @@ object FileUtils {
         return fileToList(File(resourcePath), transformer)
     }
 
+    fun fileToList(resourceName: String): List<String> {
+        return fileToList(resourceName) { it }
+    }
+
     fun resourceToIntList(resourceName: String): List<Int> {
         return fileToList(resourceName) { it.toInt() }
     }
