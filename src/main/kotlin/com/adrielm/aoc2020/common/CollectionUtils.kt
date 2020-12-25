@@ -10,5 +10,6 @@ object CollectionUtils {
             }
             listOfLines
         }
+            .filter { it.isNotEmpty() }
     }
 }
