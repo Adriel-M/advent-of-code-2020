@@ -46,21 +46,21 @@ object Algorithms {
         start: PT,
         getChildKeyLambda: (CT) -> PT,
         actionAtEachLevel: (PT) -> Unit,
-        visitedAlreadyLambda: (PT) -> O,
-        endOfLevelLambda: (PT, List<Pair<CT, O>>) -> O
+        endOfLevelLambda: (PT, List<ChildAndReturn<CT, O>>) -> O
     ): O {
-        val visitedAndReturn = mutableSetOf<PT>()
+        val visitedAndReturn = mutableMapOf<PT, O>()
 
         fun traverse(current: PT): O {
-            if (current in visitedAndReturn) return visitedAlreadyLambda(current)
+            if (current in visitedAndReturn) return visitedAndReturn[current]!!
 
             actionAtEachLevel(current)
-            visitedAndReturn.add(current)
 
             val children = graph[current] ?: listOf()
-            val childAndOutput = children.map { Pair(it, traverse(getChildKeyLambda(it))) }
+            val childAndOutput = children.map { ChildAndReturn(it, traverse(getChildKeyLambda(it))) }
 
-            return endOfLevelLambda(current, childAndOutput)
+            val returnValue = endOfLevelLambda(current, childAndOutput)
+            visitedAndReturn[current] = returnValue
+            return returnValue
         }
         return traverse(start)
     }
@@ -71,8 +71,7 @@ object Algorithms {
             start = start,
             actionAtEachLevel = actionAtEachLevel,
             getChildKeyLambda = { it },
-            visitedAlreadyLambda = { },
-            endOfLevelLambda = { _, _ -> }
+            endOfLevelLambda = { _, _: List<*> -> }
         )
     }
 
@@ -80,16 +79,19 @@ object Algorithms {
         graph: Map<PT, Set<CT>>,
         start: PT,
         getChildKeyLambda: (CT) -> PT,
-        visitedAlreadyLambda: (PT) -> O,
-        endOfLevelLambda: (PT, List<Pair<CT, O>>) -> O
+        endOfLevelLambda: (PT, List<ChildAndReturn<CT, O>>) -> O
     ): O {
         return dfs(
             graph = graph,
             start = start,
             getChildKeyLambda = getChildKeyLambda,
             actionAtEachLevel = { },
-            visitedAlreadyLambda = visitedAlreadyLambda,
             endOfLevelLambda = endOfLevelLambda,
         )
     }
+
+    class ChildAndReturn<CT, O>(
+        val child: CT,
+        val returnValue: O
+    )
 }

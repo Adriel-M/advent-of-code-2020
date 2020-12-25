@@ -25,15 +25,12 @@ class Day07 : Solution<List<BaggageRule>, Int>(7) {
             parentToChildGraph[rule.parentColour] = rule.children.toSet()
         }
 
-        return Algorithms.dfsReturn(
+        return Algorithms.dfsReturn<String, BaggageRule.ChildAndQuantity, Int>(
             graph = parentToChildGraph,
             start = "shiny gold",
             getChildKeyLambda = { it.colour },
-            visitedAlreadyLambda = { 0 },
             endOfLevelLambda = { _, childrenAndReturns ->
-                1 + childrenAndReturns.sumBy { childAndReturn ->
-                    childAndReturn.first.quantity * childAndReturn.second
-                }
+                1 + childrenAndReturns.sumBy { it.child.quantity * it.returnValue }
             }
         ) - 1 // exclude the starting baggage
     }

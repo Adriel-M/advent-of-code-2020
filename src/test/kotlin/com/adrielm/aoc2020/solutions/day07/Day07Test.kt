@@ -54,6 +54,6 @@ class Day07Test : BaseTest() {
     fun `input problem 2`() {
         val fileInput = FileUtils.fileToList("day07.txt")
         val baggageRules = fileInput.map { BaggageRule(it) }
-        assertThat(day07.solveProblem2(baggageRules)).isEqualTo(139)
+        assertThat(day07.solveProblem2(baggageRules)).isEqualTo(58175)
     }
 }
