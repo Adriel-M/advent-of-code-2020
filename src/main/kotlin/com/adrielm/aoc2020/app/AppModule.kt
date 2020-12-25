@@ -8,6 +8,7 @@ import com.adrielm.aoc2020.solutions.day05.Day05
 import com.adrielm.aoc2020.solutions.day06.Day06
 import com.adrielm.aoc2020.solutions.day07.Day07
 import com.adrielm.aoc2020.solutions.day08.Day08
+import com.adrielm.aoc2020.solutions.day09.Day09
 
 object AppModule {
     val modules = listOf(
@@ -19,5 +20,6 @@ object AppModule {
         Day06.module,
         Day07.module,
         Day08.module,
+        Day09.module,
     )
 }
