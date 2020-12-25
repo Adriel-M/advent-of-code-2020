@@ -5,7 +5,9 @@ import kotlin.properties.Delegates
 
 class InstructionSet() {
     var instruction by Delegates.notNull<Instruction>()
+        private set
     var number by Delegates.notNull<Int>()
+        private set
 
     constructor(
         instructionData: String
