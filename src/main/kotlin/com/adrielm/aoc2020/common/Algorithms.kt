@@ -40,4 +40,58 @@ object Algorithms {
         }
         return currentLower
     }
+
+    private fun <PT, CT, O> dfs(
+        graph: Map<PT, Collection<CT>>,
+        start: PT,
+        getChildKeyLambda: (CT) -> PT,
+        actionAtEachLevel: (PT) -> Unit,
+        endOfLevelLambda: (PT, List<ChildAndReturn<CT, O>>) -> O
+    ): O {
+        val visitedAndReturn = mutableMapOf<PT, O>()
+
+        fun traverse(current: PT): O {
+            if (current in visitedAndReturn) return visitedAndReturn[current]!!
+
+            actionAtEachLevel(current)
+
+            val children = graph[current] ?: listOf()
+            val childAndOutput = children.map { ChildAndReturn(it, traverse(getChildKeyLambda(it))) }
+
+            val returnValue = endOfLevelLambda(current, childAndOutput)
+            visitedAndReturn[current] = returnValue
+            return returnValue
+        }
+        return traverse(start)
+    }
+
+    fun <T> dfsActionEveryLevel(graph: Map<T, Set<T>>, start: T, actionAtEachLevel: (T) -> Unit) {
+        dfs(
+            graph = graph,
+            start = start,
+            actionAtEachLevel = actionAtEachLevel,
+            getChildKeyLambda = { it },
+            endOfLevelLambda = { _, _: List<*> -> }
+        )
+    }
+
+    fun <PT, CT, O> dfsReturn(
+        graph: Map<PT, Set<CT>>,
+        start: PT,
+        getChildKeyLambda: (CT) -> PT,
+        endOfLevelLambda: (PT, List<ChildAndReturn<CT, O>>) -> O
+    ): O {
+        return dfs(
+            graph = graph,
+            start = start,
+            getChildKeyLambda = getChildKeyLambda,
+            actionAtEachLevel = { },
+            endOfLevelLambda = endOfLevelLambda,
+        )
+    }
+
+    class ChildAndReturn<CT, O>(
+        val child: CT,
+        val returnValue: O
+    )
 }
