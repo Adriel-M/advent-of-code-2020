@@ -3,14 +3,12 @@ package com.adrielm.aoc2020.solutions.day09
 import com.adrielm.aoc2020.common.FileUtils
 import com.adrielm.aoc2020.test_utils.BaseTest
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.Test
 import org.koin.test.inject
 
 class Day09Test : BaseTest() {
     private val day09: Day09 by inject()
 
-    @Test
-    fun `sample input 1`() {
+    override fun `example problem 1`() {
         val example = listOf(
             35,
             20,
@@ -43,8 +41,19 @@ class Day09Test : BaseTest() {
         ).isEqualTo(127)
     }
 
-    @Test
-    fun `sample problem 2`() {
+    override fun `input problem 1`() {
+        val fileInput = FileUtils.fileToList("day09.txt") { it.toLong() }
+        assertThat(
+            day09.solveProblem1(
+                Day09.Input(
+                    preambleSize = 25,
+                    numbers = fileInput
+                )
+            )
+        ).isEqualTo(675280050L)
+    }
+
+    override fun `example problem 2`() {
         val example = listOf(
             35,
             20,
@@ -77,21 +86,7 @@ class Day09Test : BaseTest() {
         ).isEqualTo(62)
     }
 
-    @Test
-    fun `input problem 1`() {
-        val fileInput = FileUtils.fileToList("day09.txt") { it.toLong() }
-        assertThat(
-            day09.solveProblem1(
-                Day09.Input(
-                    preambleSize = 25,
-                    numbers = fileInput
-                )
-            )
-        ).isEqualTo(675280050L)
-    }
-
-    @Test
-    fun `input problem 2`() {
+    override fun `input problem 2`() {
         val fileInput = FileUtils.fileToList("day09.txt") { it.toLong() }
         assertThat(
             day09.solveProblem2(

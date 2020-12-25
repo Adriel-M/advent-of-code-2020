@@ -4,7 +4,6 @@ import com.adrielm.aoc2020.common.FileUtils
 import com.adrielm.aoc2020.test_utils.BaseTest
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.BeforeClass
-import org.junit.Test
 import org.koin.test.inject
 
 class Day01Test : BaseTest() {
@@ -19,23 +18,19 @@ class Day01Test : BaseTest() {
         1456,
     )
 
-    @Test
-    fun `example problem 1`() {
+    override fun `example problem 1`() {
         assertThat(day01.solveProblem1(exampleInput)).isEqualTo(514579)
     }
 
-    @Test
-    fun `example problem 2`() {
-        assertThat(day01.solveProblem2(exampleInput)).isEqualTo(241861950)
-    }
-
-    @Test
-    fun `input problem 1`() {
+    override fun `input problem 1`() {
         assertThat(day01.solveProblem1(fileInput)).isEqualTo(299299)
     }
 
-    @Test
-    fun `input problem 2`() {
+    override fun `example problem 2`() {
+        assertThat(day01.solveProblem2(exampleInput)).isEqualTo(241861950)
+    }
+
+    override fun `input problem 2`() {
         assertThat(day01.solveProblem2(fileInput)).isEqualTo(287730716)
     }
 
