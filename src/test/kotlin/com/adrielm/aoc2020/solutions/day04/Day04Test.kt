@@ -3,15 +3,13 @@ package com.adrielm.aoc2020.solutions.day04
 import com.adrielm.aoc2020.common.FileUtils
 import com.adrielm.aoc2020.test_utils.BaseTest
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.Test
 import org.koin.test.inject
 
 class Day04Test : BaseTest() {
     private val day04: Day04 by inject()
     private val passportAccumulator: PassportAccumulator by inject()
 
-    @Test
-    fun `example problem 1`() {
+    override fun `example problem 1`() {
         val example =
             """
             ecl:gry pid:860033327 eyr:2020 hcl:#fffffd
@@ -32,8 +30,13 @@ class Day04Test : BaseTest() {
         assertThat(day04.solveProblem1(passports)).isEqualTo(2)
     }
 
-    @Test
-    fun `example problem 2`() {
+    override fun `input problem 1`() {
+        val fileSequence = FileUtils.fileToList("day04.txt")
+        val passports = passportAccumulator.getPassports(fileSequence)
+        assertThat(day04.solveProblem1(passports)).isEqualTo(208)
+    }
+
+    override fun `example problem 2`() {
         val example =
             """
                 eyr:1972 cid:100
@@ -67,15 +70,7 @@ class Day04Test : BaseTest() {
         assertThat(day04.solveProblem2(passports)).isEqualTo(4)
     }
 
-    @Test
-    fun `input problem 1`() {
-        val fileSequence = FileUtils.fileToList("day04.txt")
-        val passports = passportAccumulator.getPassports(fileSequence)
-        assertThat(day04.solveProblem1(passports)).isEqualTo(208)
-    }
-
-    @Test
-    fun `input problem 2`() {
+    override fun `input problem 2`() {
         val fileSequence = FileUtils.fileToList("day04.txt")
         val passports = passportAccumulator.getPassports(fileSequence)
         assertThat(day04.solveProblem2(passports)).isEqualTo(167)

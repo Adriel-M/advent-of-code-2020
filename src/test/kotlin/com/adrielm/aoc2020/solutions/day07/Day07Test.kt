@@ -3,14 +3,12 @@ package com.adrielm.aoc2020.solutions.day07
 import com.adrielm.aoc2020.common.FileUtils
 import com.adrielm.aoc2020.test_utils.BaseTest
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.Test
 import org.koin.test.inject
 
 class Day07Test : BaseTest() {
     private val day07: Day07 by inject()
 
-    @Test
-    fun `example problem 1`() {
+    override fun `example problem 1`() {
         val example =
             """
             light red bags contain 1 bright white bag, 2 muted yellow bags.
@@ -27,8 +25,12 @@ class Day07Test : BaseTest() {
         assertThat(day07.solveProblem1(baggageRules)).isEqualTo(4)
     }
 
-    @Test
-    fun `example problem 2`() {
+    override fun `input problem 1`() {
+        val baggageRules = FileUtils.fileToList("day07.txt") { BaggageRule(it) }
+        assertThat(day07.solveProblem1(baggageRules)).isEqualTo(139)
+    }
+
+    override fun `example problem 2`() {
         val example =
             """
             shiny gold bags contain 2 dark red bags.
@@ -43,14 +45,7 @@ class Day07Test : BaseTest() {
         assertThat(day07.solveProblem2(baggageRules)).isEqualTo(126)
     }
 
-    @Test
-    fun `input problem 1`() {
-        val baggageRules = FileUtils.fileToList("day07.txt") { BaggageRule(it) }
-        assertThat(day07.solveProblem1(baggageRules)).isEqualTo(139)
-    }
-
-    @Test
-    fun `input problem 2`() {
+    override fun `input problem 2`() {
         val baggageRules = FileUtils.fileToList("day07.txt") { BaggageRule(it) }
         assertThat(day07.solveProblem2(baggageRules)).isEqualTo(58175)
     }
