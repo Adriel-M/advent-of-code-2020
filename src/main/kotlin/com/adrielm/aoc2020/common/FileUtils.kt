@@ -2,7 +2,7 @@ package com.adrielm.aoc2020.common
 
 import java.io.File
 
-object Utils {
+object FileUtils {
     private fun <T> fileToList(file: File, transformer: (String) -> T): List<T> {
         return file.useLines { fileSequence ->
             fileSequence.map { line ->
@@ -15,6 +15,10 @@ object Utils {
     fun <T> fileToList(resourceName: String, transformer: (String) -> T): List<T> {
         val resourcePath = resourceName.toURI()
         return fileToList(File(resourcePath), transformer)
+    }
+
+    fun fileToList(resourceName: String): List<String> {
+        return fileToList(resourceName) { it }
     }
 
     fun resourceToIntList(resourceName: String): List<Int> {

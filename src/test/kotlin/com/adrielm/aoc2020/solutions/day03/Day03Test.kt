@@ -1,6 +1,6 @@
 package com.adrielm.aoc2020.solutions.day03
 
-import com.adrielm.aoc2020.common.Utils
+import com.adrielm.aoc2020.common.FileUtils
 import com.adrielm.aoc2020.test_utils.BaseTest
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
@@ -38,13 +38,13 @@ class Day03Test : BaseTest() {
 
     @Test
     fun `input problem 1`() {
-        val fileInput = Utils.fileToList("day03.txt") { it }
+        val fileInput = FileUtils.fileToList("day03.txt")
         assertThat(day03.solveProblem1(fileInput)).isEqualTo(252L)
     }
 
     @Test
     fun `input problem 2`() {
-        val fileInput = Utils.fileToList("day03.txt") { it }
+        val fileInput = FileUtils.fileToList("day03.txt")
         assertThat(day03.solveProblem2(fileInput)).isEqualTo(2608962048L)
     }
 }

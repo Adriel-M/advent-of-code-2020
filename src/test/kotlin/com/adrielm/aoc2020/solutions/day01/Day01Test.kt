@@ -1,6 +1,6 @@
 package com.adrielm.aoc2020.solutions.day01
 
-import com.adrielm.aoc2020.common.Utils
+import com.adrielm.aoc2020.common.FileUtils
 import com.adrielm.aoc2020.test_utils.BaseTest
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.BeforeClass
@@ -45,7 +45,7 @@ class Day01Test : BaseTest() {
         @BeforeClass
         @JvmStatic
         fun classSetup() {
-            fileInput = Utils.resourceToIntList("day01.txt")
+            fileInput = FileUtils.resourceToIntList("day01.txt")
         }
     }
 }
