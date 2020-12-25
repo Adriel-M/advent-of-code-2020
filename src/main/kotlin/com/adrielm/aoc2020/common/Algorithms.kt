@@ -1,17 +1,40 @@
 package com.adrielm.aoc2020.common
 
 object Algorithms {
-    fun twoSum(input: List<Int>, target: Int, startingIndex: Int = 0): Pair<Int, Int>? {
-        val visited = mutableSetOf<Int>()
+    private fun <T> twoSum(
+        input: List<T>,
+        target: T,
+        startingIndex: Int,
+        subtractFun: (T, T) -> T
+    ): Pair<T, T>? {
+        val visited = mutableSetOf<T>()
         for (i in startingIndex until input.size) {
             val currentNumber = input[i]
-            val numberToFind = target - currentNumber
+            val numberToFind = subtractFun(target, currentNumber)
             if (numberToFind in visited) {
                 return Pair(numberToFind, currentNumber)
             }
             visited.add(currentNumber)
         }
         return null
+    }
+
+    fun twoSum(input: List<Int>, target: Int, startingIndex: Int = 0): Pair<Int, Int>? {
+        return twoSum(
+            input = input,
+            target = target,
+            startingIndex = startingIndex,
+            subtractFun = { a, b -> a.minus(b) }
+        )
+    }
+
+    fun twoSum(input: List<Long>, target: Long, startingIndex: Int = 0): Pair<Long, Long>? {
+        return twoSum(
+            input = input,
+            target = target,
+            startingIndex = startingIndex,
+            subtractFun = { a, b -> a.minus(b) }
+        )
     }
 
     fun threeSum(input: List<Int>, target: Int): Triple<Int, Int, Int>? {
