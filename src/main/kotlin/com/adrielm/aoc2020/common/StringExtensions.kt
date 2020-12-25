@@ -15,3 +15,7 @@ fun <T> String.toPair(delimiter: String = "-", transformer: (String) -> T): Pair
     val second = transformer(rangeSplit[1])
     return Pair(first, second)
 }
+
+fun String.split() = split(" ")
+
+fun String.splitNewLines() = split("\n")
