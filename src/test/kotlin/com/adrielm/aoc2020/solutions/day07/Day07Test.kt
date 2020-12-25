@@ -1,6 +1,7 @@
 package com.adrielm.aoc2020.solutions.day07
 
 import com.adrielm.aoc2020.common.FileUtils
+import com.adrielm.aoc2020.common.splitNewLines
 import com.adrielm.aoc2020.test_utils.BaseTest
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
@@ -23,7 +24,7 @@ class Day07Test : BaseTest() {
             faded blue bags contain no other bags.
             dotted black bags contain no other bags.
             """.trimIndent()
-        val baggageRules = example.split("\n").map { BaggageRule(it) }
+        val baggageRules = example.splitNewLines().map { BaggageRule(it) }
         assertThat(day07.solveProblem1(baggageRules)).isEqualTo(4)
     }
 
@@ -39,7 +40,7 @@ class Day07Test : BaseTest() {
             dark blue bags contain 2 dark violet bags.
             dark violet bags contain no other bags.
             """.trimIndent()
-        val baggageRules = example.split("\n").map { BaggageRule(it) }
+        val baggageRules = example.splitNewLines().map { BaggageRule(it) }
         assertThat(day07.solveProblem2(baggageRules)).isEqualTo(126)
     }
 

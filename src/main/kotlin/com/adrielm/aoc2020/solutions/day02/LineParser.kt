@@ -1,5 +1,6 @@
 package com.adrielm.aoc2020.solutions.day02
 
+import com.adrielm.aoc2020.common.split
 import com.adrielm.aoc2020.common.toPair
 
 class LineParser {
@@ -15,7 +16,7 @@ class LineParser {
     }
 
     private fun parsePolicy(policySplit: String): CharacterPolicy {
-        val split = policySplit.trim().split(" ")
+        val split = policySplit.trim().split()
         return CharacterPolicy(
             char = split[1].first(),
             lowerUpper = split[0].toPair { it.toInt() }.toLowerUpper()

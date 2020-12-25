@@ -1,5 +1,7 @@
 package com.adrielm.aoc2020.solutions.day07
 
+import com.adrielm.aoc2020.common.split
+
 private const val NO_OTHER_BAGS = "no other"
 
 class BaggageRule(
@@ -31,7 +33,7 @@ class BaggageRule(
         val childrenTrimmed = childrenPortion.trim()
         val childrenSplit = childrenTrimmed.split(",")
         return childrenSplit.map { childPortion ->
-            val childSplit = childPortion.trim().split(" ")
+            val childSplit = childPortion.trim().split()
             ChildAndQuantity(
                 colour = childSplit.drop(1).joinToString(" "),
                 quantity = childSplit.first().toInt(),

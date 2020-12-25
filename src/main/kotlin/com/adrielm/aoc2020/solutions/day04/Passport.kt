@@ -1,6 +1,7 @@
 package com.adrielm.aoc2020.solutions.day04
 
 import com.adrielm.aoc2020.common.safeEnumValueOf
+import com.adrielm.aoc2020.common.split
 import com.adrielm.aoc2020.common.toPair
 
 class Passport(
@@ -13,7 +14,7 @@ class Passport(
 
     private fun parseLines(): Map<RequiredPassportEntries, String> {
         return passportLines.asSequence()
-            .flatMap { it.split(" ") }
+            .flatMap { it.split() }
             .mapNotNull { parseEntry(it) }
             .associateBy({ it.first }, { it.second })
     }
