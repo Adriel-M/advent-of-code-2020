@@ -9,7 +9,7 @@ class Day12Test : BaseTest(12) {
     private val day12: Day12 by inject()
     private val instructionParser: InstructionParser by inject()
 
-    private val fileInput = FileUtils.fileToList(fileName) { instructionParser.parse(it) }
+    private val fileInput = FileUtils.fileToList(resourceName) { instructionParser.parse(it) }
 
     override fun `example problem 1`() {
         val example =

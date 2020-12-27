@@ -8,7 +8,7 @@ import org.koin.test.inject
 class Day10Test : BaseTest(10) {
     private val day10: Day10 by inject()
 
-    val fileInput = FileUtils.resourceToIntList(fileName)
+    val fileInput = FileUtils.resourceToIntList(resourceName)
 
     override fun `example problem 1`() {
         val example1 = listOf(

@@ -10,7 +10,7 @@ abstract class BaseTest(
     problemNumber: Int
 ) : AutoCloseKoinTest() {
     private val paddedNumber = problemNumber.toString().padStart(2, '0')
-    protected val fileName = "day$paddedNumber.txt"
+    protected val resourceName = "day$paddedNumber.txt"
 
     @get:Rule
     val rule = KoinTestRule.create {

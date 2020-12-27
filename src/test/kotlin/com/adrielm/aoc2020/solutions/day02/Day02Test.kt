@@ -16,7 +16,7 @@ class Day02Test : BaseTest(2) {
         2-9 c: ccccccccc
         """.trimIndent()
 
-    private val fileInput = FileUtils.fileToList(fileName) { lineParser.parse(it) }
+    private val fileInput = FileUtils.fileToList(resourceName) { lineParser.parse(it) }
 
     override fun `example problem 1`() {
         val sampleInput = example.lines().map { lineParser.parse(it) }

@@ -9,7 +9,7 @@ class Day13Test : BaseTest(13) {
     private val day13: Day13 by inject()
     private val busScheduleParser: BusScheduleParser by inject()
 
-    private val fileInput = FileUtils.fileToList(fileName)
+    private val fileInput = FileUtils.fileToList(resourceName)
 
     override fun `example problem 1`() {
         assertThat(

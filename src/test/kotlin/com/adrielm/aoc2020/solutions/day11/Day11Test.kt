@@ -8,7 +8,7 @@ import org.koin.test.inject
 class Day11Test : BaseTest(11) {
     private val day11: Day11 by inject()
 
-    private val fileInput = FileUtils.fileToList(fileName) { it.toList() }
+    private val fileInput = FileUtils.fileToList(resourceName) { it.toList() }
 
     private val exampleInput =
         """

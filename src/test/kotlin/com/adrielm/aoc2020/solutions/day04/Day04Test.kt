@@ -10,7 +10,7 @@ class Day04Test : BaseTest(4) {
     private val passportAccumulator: PassportAccumulator by inject()
 
     val fileInput = passportAccumulator.getPassports(
-        FileUtils.fileToList(fileName)
+        FileUtils.fileToList(resourceName)
     )
 
     override fun `example problem 1`() {

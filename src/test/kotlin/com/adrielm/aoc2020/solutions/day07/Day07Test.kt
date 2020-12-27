@@ -8,7 +8,7 @@ import org.koin.test.inject
 class Day07Test : BaseTest(7) {
     private val day07: Day07 by inject()
 
-    private val fileInput = FileUtils.fileToList(fileName) { BaggageRule(it) }
+    private val fileInput = FileUtils.fileToList(resourceName) { BaggageRule(it) }
 
     override fun `example problem 1`() {
         val example =

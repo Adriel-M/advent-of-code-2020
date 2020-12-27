@@ -14,7 +14,7 @@ class Day05Test : BaseTest(5) {
         Seat("BBFFBBFRLL"),
     )
 
-    private val fileInput = FileUtils.fileToList("day05.txt") { Seat(it) }
+    private val fileInput = FileUtils.fileToList(resourceName) { Seat(it) }
 
     override fun `example problem 1`() {
         assertThat(day05.solveProblem1(exampleSeats)).isEqualTo(820)

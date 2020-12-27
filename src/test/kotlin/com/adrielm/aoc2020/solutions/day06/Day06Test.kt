@@ -30,7 +30,7 @@ class Day06Test : BaseTest(6) {
     private val exampleCustomsAnswers = CollectionUtils.partitionLinesByEmptySpace(exampleInput.lines())
 
     private val fileInput = CollectionUtils.partitionLinesByEmptySpace(
-        FileUtils.fileToList(fileName)
+        FileUtils.fileToList(resourceName)
     )
 
     override fun `example problem 1`() {

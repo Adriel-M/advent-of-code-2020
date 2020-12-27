@@ -17,7 +17,7 @@ class Day01Test : BaseTest(1) {
         1456,
     )
 
-    private val fileInput = FileUtils.resourceToIntList(fileName)
+    private val fileInput = FileUtils.resourceToIntList(resourceName)
 
     override fun `example problem 1`() {
         assertThat(day01.solveProblem1(exampleInput)).isEqualTo(514579)

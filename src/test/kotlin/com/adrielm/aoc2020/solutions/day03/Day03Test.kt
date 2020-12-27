@@ -23,7 +23,7 @@ class Day03Test : BaseTest(3) {
             .#..#...#.#
         """.trimIndent()
 
-    private val fileInput = FileUtils.fileToList(fileName)
+    private val fileInput = FileUtils.fileToList(resourceName)
 
     override fun `example problem 1`() {
         val sampleInput = example.lines()
