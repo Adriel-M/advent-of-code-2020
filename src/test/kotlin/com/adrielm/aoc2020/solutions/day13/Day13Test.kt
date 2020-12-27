@@ -5,9 +5,11 @@ import com.adrielm.aoc2020.test_utils.BaseTest
 import org.assertj.core.api.Assertions.assertThat
 import org.koin.test.inject
 
-class Day13Test : BaseTest() {
+class Day13Test : BaseTest(13) {
     private val day13: Day13 by inject()
     private val busScheduleParser: BusScheduleParser by inject()
+
+    private val fileInput = FileUtils.fileToList(fileName)
 
     override fun `example problem 1`() {
         assertThat(
@@ -21,7 +23,6 @@ class Day13Test : BaseTest() {
     }
 
     override fun `input problem 1`() {
-        val fileInput = FileUtils.fileToList("day13.txt")
         val start = fileInput.first().toInt()
         val schedules = busScheduleParser.parse(fileInput[1])
 
@@ -92,7 +93,6 @@ class Day13Test : BaseTest() {
     }
 
     override fun `input problem 2`() {
-        val fileInput = FileUtils.fileToList("day13.txt")
         val start = fileInput.first().toInt()
         val schedules = busScheduleParser.parse(fileInput[1])
 

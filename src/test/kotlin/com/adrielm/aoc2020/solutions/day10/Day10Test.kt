@@ -5,8 +5,10 @@ import com.adrielm.aoc2020.test_utils.BaseTest
 import org.assertj.core.api.Assertions.assertThat
 import org.koin.test.inject
 
-class Day10Test : BaseTest() {
+class Day10Test : BaseTest(10) {
     private val day10: Day10 by inject()
+
+    val fileInput = FileUtils.resourceToIntList(fileName)
 
     override fun `example problem 1`() {
         val example1 = listOf(
@@ -61,7 +63,6 @@ class Day10Test : BaseTest() {
     }
 
     override fun `input problem 1`() {
-        val fileInput = FileUtils.resourceToIntList("day10.txt")
         assertThat(day10.solveProblem1(fileInput)).isEqualTo(2812L)
     }
 
@@ -118,7 +119,6 @@ class Day10Test : BaseTest() {
     }
 
     override fun `input problem 2`() {
-        val fileInput = FileUtils.resourceToIntList("day10.txt")
         assertThat(day10.solveProblem2(fileInput)).isEqualTo(386869246296064L)
     }
 }

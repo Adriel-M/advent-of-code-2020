@@ -6,7 +6,12 @@ import org.junit.Test
 import org.koin.test.AutoCloseKoinTest
 import org.koin.test.KoinTestRule
 
-abstract class BaseTest : AutoCloseKoinTest() {
+abstract class BaseTest(
+    problemNumber: Int
+) : AutoCloseKoinTest() {
+    private val paddedNumber = problemNumber.toString().padStart(2, '0')
+    protected val fileName = "day$paddedNumber.txt"
+
     @get:Rule
     val rule = KoinTestRule.create {
         modules(AppModule.modules)

@@ -5,8 +5,10 @@ import com.adrielm.aoc2020.test_utils.BaseTest
 import org.assertj.core.api.Assertions.assertThat
 import org.koin.test.inject
 
-class Day08Test : BaseTest() {
+class Day08Test : BaseTest(8) {
     private val day08: Day08 by inject()
+
+    private val fileInput = FileUtils.fileToList(fileName) { InstructionSet(it) }
 
     override fun `example problem 1`() {
         val example =
@@ -26,8 +28,7 @@ class Day08Test : BaseTest() {
     }
 
     override fun `input problem 1`() {
-        val instructions = FileUtils.fileToList("day08.txt") { InstructionSet(it) }
-        assertThat(day08.solveProblem1(instructions)).isEqualTo(1586)
+        assertThat(day08.solveProblem1(fileInput)).isEqualTo(1586)
     }
 
     override fun `example problem 2`() {
@@ -48,7 +49,6 @@ class Day08Test : BaseTest() {
     }
 
     override fun `input problem 2`() {
-        val instructions = FileUtils.fileToList("day08.txt") { InstructionSet(it) }
-        assertThat(day08.solveProblem2(instructions)).isEqualTo(703)
+        assertThat(day08.solveProblem2(fileInput)).isEqualTo(703)
     }
 }

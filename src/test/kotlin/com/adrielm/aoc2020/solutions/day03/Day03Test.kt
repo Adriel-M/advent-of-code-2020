@@ -5,7 +5,7 @@ import com.adrielm.aoc2020.test_utils.BaseTest
 import org.assertj.core.api.Assertions.assertThat
 import org.koin.test.inject
 
-class Day03Test : BaseTest() {
+class Day03Test : BaseTest(3) {
     private val day03: Day03 by inject()
 
     private val example =
@@ -23,13 +23,14 @@ class Day03Test : BaseTest() {
             .#..#...#.#
         """.trimIndent()
 
+    private val fileInput = FileUtils.fileToList(fileName)
+
     override fun `example problem 1`() {
         val sampleInput = example.lines()
         assertThat(day03.solveProblem1(sampleInput)).isEqualTo(7L)
     }
 
     override fun `input problem 1`() {
-        val fileInput = FileUtils.fileToList("day03.txt")
         assertThat(day03.solveProblem1(fileInput)).isEqualTo(252L)
     }
 
@@ -39,7 +40,6 @@ class Day03Test : BaseTest() {
     }
 
     override fun `input problem 2`() {
-        val fileInput = FileUtils.fileToList("day03.txt")
         assertThat(day03.solveProblem2(fileInput)).isEqualTo(2608962048L)
     }
 }

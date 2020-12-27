@@ -5,8 +5,10 @@ import com.adrielm.aoc2020.test_utils.BaseTest
 import org.assertj.core.api.Assertions.assertThat
 import org.koin.test.inject
 
-class Day07Test : BaseTest() {
+class Day07Test : BaseTest(7) {
     private val day07: Day07 by inject()
+
+    private val fileInput = FileUtils.fileToList(fileName) { BaggageRule(it) }
 
     override fun `example problem 1`() {
         val example =
@@ -26,8 +28,7 @@ class Day07Test : BaseTest() {
     }
 
     override fun `input problem 1`() {
-        val baggageRules = FileUtils.fileToList("day07.txt") { BaggageRule(it) }
-        assertThat(day07.solveProblem1(baggageRules)).isEqualTo(139)
+        assertThat(day07.solveProblem1(fileInput)).isEqualTo(139)
     }
 
     override fun `example problem 2`() {
@@ -46,7 +47,6 @@ class Day07Test : BaseTest() {
     }
 
     override fun `input problem 2`() {
-        val baggageRules = FileUtils.fileToList("day07.txt") { BaggageRule(it) }
-        assertThat(day07.solveProblem2(baggageRules)).isEqualTo(58175)
+        assertThat(day07.solveProblem2(fileInput)).isEqualTo(58175)
     }
 }

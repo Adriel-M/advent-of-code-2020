@@ -6,7 +6,7 @@ import com.adrielm.aoc2020.test_utils.BaseTest
 import org.assertj.core.api.Assertions.assertThat
 import org.koin.test.inject
 
-class Day06Test : BaseTest() {
+class Day06Test : BaseTest(6) {
     private val day06: Day06 by inject()
 
     private val exampleInput =
@@ -27,17 +27,18 @@ class Day06Test : BaseTest() {
 
                 b
         """.trimIndent()
+    private val exampleCustomsAnswers = CollectionUtils.partitionLinesByEmptySpace(exampleInput.lines())
 
-    private val exampleCustomsAnswers = CollectionUtils.partitionLinesByEmptySpace(exampleInput.split('\n'))
+    private val fileInput = CollectionUtils.partitionLinesByEmptySpace(
+        FileUtils.fileToList(fileName)
+    )
 
     override fun `example problem 1`() {
         assertThat(day06.solveProblem1(exampleCustomsAnswers)).isEqualTo(11)
     }
 
     override fun `input problem 1`() {
-        val fileInput = FileUtils.fileToList("day06.txt")
-        val answers = CollectionUtils.partitionLinesByEmptySpace(fileInput)
-        assertThat(day06.solveProblem1(answers)).isEqualTo(6799)
+        assertThat(day06.solveProblem1(fileInput)).isEqualTo(6799)
     }
 
     override fun `example problem 2`() {
@@ -45,8 +46,6 @@ class Day06Test : BaseTest() {
     }
 
     override fun `input problem 2`() {
-        val fileInput = FileUtils.fileToList("day06.txt")
-        val answers = CollectionUtils.partitionLinesByEmptySpace(fileInput)
-        assertThat(day06.solveProblem2(answers)).isEqualTo(3354)
+        assertThat(day06.solveProblem2(fileInput)).isEqualTo(3354)
     }
 }

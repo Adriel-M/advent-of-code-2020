@@ -3,10 +3,9 @@ package com.adrielm.aoc2020.solutions.day01
 import com.adrielm.aoc2020.common.FileUtils
 import com.adrielm.aoc2020.test_utils.BaseTest
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.BeforeClass
 import org.koin.test.inject
 
-class Day01Test : BaseTest() {
+class Day01Test : BaseTest(1) {
     private val day01: Day01 by inject()
 
     private val exampleInput = listOf(
@@ -17,6 +16,8 @@ class Day01Test : BaseTest() {
         675,
         1456,
     )
+
+    private val fileInput = FileUtils.resourceToIntList(fileName)
 
     override fun `example problem 1`() {
         assertThat(day01.solveProblem1(exampleInput)).isEqualTo(514579)
@@ -32,15 +33,5 @@ class Day01Test : BaseTest() {
 
     override fun `input problem 2`() {
         assertThat(day01.solveProblem2(fileInput)).isEqualTo(287730716)
-    }
-
-    companion object {
-        lateinit var fileInput: List<Int>
-
-        @BeforeClass
-        @JvmStatic
-        fun classSetup() {
-            fileInput = FileUtils.resourceToIntList("day01.txt")
-        }
     }
 }

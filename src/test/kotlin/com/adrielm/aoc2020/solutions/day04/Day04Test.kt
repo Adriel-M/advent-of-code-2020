@@ -5,9 +5,13 @@ import com.adrielm.aoc2020.test_utils.BaseTest
 import org.assertj.core.api.Assertions.assertThat
 import org.koin.test.inject
 
-class Day04Test : BaseTest() {
+class Day04Test : BaseTest(4) {
     private val day04: Day04 by inject()
     private val passportAccumulator: PassportAccumulator by inject()
+
+    val fileInput = passportAccumulator.getPassports(
+        FileUtils.fileToList(fileName)
+    )
 
     override fun `example problem 1`() {
         val example =
@@ -31,9 +35,7 @@ class Day04Test : BaseTest() {
     }
 
     override fun `input problem 1`() {
-        val fileSequence = FileUtils.fileToList("day04.txt")
-        val passports = passportAccumulator.getPassports(fileSequence)
-        assertThat(day04.solveProblem1(passports)).isEqualTo(208)
+        assertThat(day04.solveProblem1(fileInput)).isEqualTo(208)
     }
 
     override fun `example problem 2`() {
@@ -71,8 +73,6 @@ class Day04Test : BaseTest() {
     }
 
     override fun `input problem 2`() {
-        val fileSequence = FileUtils.fileToList("day04.txt")
-        val passports = passportAccumulator.getPassports(fileSequence)
-        assertThat(day04.solveProblem2(passports)).isEqualTo(167)
+        assertThat(day04.solveProblem2(fileInput)).isEqualTo(167)
     }
 }
